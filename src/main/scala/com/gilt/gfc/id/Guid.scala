@@ -24,8 +24,8 @@ import scala.beans.BeanProperty
  * }}}
  */
 // intention is to always construct via apply(...) methods in the companion object
-class Guid[A] protected(@BeanProperty val mostSignificantBits: Long, // preserve old GUID api
-                        @BeanProperty val leastSignificantBits: Long) extends Ordered[Guid[A]] {
+sealed class Guid[+A] protected(@BeanProperty val mostSignificantBits: Long, // preserve old GUID api
+                                @BeanProperty val leastSignificantBits: Long) extends Ordered[Guid[_]] {
 
   import Guid.{appendHexDigits, UUID_BYTE_LENGTH, UUID_STRING_LENGTH}
 
@@ -104,7 +104,7 @@ class Guid[A] protected(@BeanProperty val mostSignificantBits: Long, // preserve
   }
 
   // Ordered is also Comparable, so this should plug into existing java apis as well
-  final override def compare(other: Guid[A]): Int = {
+  final override def compare(other: Guid[_]): Int = {
     if (this.mostSignificantBits < other.mostSignificantBits) {
       -1
     } else if (this.mostSignificantBits > other.mostSignificantBits) {
