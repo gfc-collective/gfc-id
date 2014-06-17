@@ -10,7 +10,7 @@ object Id {
   def unapply[T, V](id: Id[T, V]): Option[V] = Some(id.value)
 }
 
-sealed class Id[T, V](@BeanProperty val value: V) {
+sealed class Id[+T, V](@BeanProperty val value: V) {
   require(value != null, "value must not be null")
 
   final override def toString: String = value.toString
