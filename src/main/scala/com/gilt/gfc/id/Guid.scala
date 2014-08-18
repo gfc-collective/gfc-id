@@ -9,9 +9,6 @@ import scala.beans.BeanProperty
  * Tries to be a space/cpu efficient and type safe replacement for
  * java's UUID.
  *
- * Took Stephane's efficient String parsing code from pagegen to
- * replace UUID's lame built-in implementation.
- *
  * This class takes a single (although unused) type parameter.
  * This is to implemnet compile-time checks while still keeping the
  * json integration simple (only need to define (de)serialization
