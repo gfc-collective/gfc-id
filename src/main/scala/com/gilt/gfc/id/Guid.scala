@@ -21,8 +21,9 @@ import scala.beans.BeanProperty
  * }}}
  */
 // intention is to always construct via apply(...) methods in the companion object
+@SerialVersionUID(0L)
 sealed class Guid[+A] protected(@BeanProperty val mostSignificantBits: Long, // preserve old GUID api
-                                @BeanProperty val leastSignificantBits: Long) extends Ordered[Guid[_]] {
+                                @BeanProperty val leastSignificantBits: Long) extends Ordered[Guid[_]] with Serializable {
 
   import Guid.{appendHexDigits, UUID_BYTE_LENGTH, UUID_STRING_LENGTH}
 

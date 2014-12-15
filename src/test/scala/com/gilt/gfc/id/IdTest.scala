@@ -1,5 +1,7 @@
 package com.gilt.gfc.id
 
+import java.io.{ObjectInputStream, ByteArrayInputStream, ObjectOutputStream, ByteArrayOutputStream}
+
 import org.scalatest.{FunSuite, Matchers}
 import org.scalatest.prop.Checkers
 
@@ -48,5 +50,30 @@ class IdTest extends FunSuite with Matchers with Checkers {
     Id("baz") should be("baz")
     Id(List(1, 2, 3)) should be(List(1, 2, 3))
     Id(666L) should not be("eggs")
+  }
+
+
+  test("de/serialize") {
+    def serDeSer[A, B](id: Id[A, B]): Id[A, B] = {
+      val baos = new ByteArrayOutputStream()
+      val oos = new ObjectOutputStream(baos)
+      oos.writeObject(id)
+      oos.close()
+      baos.close()
+
+      val bytes = baos.toByteArray
+
+      val bais = new ByteArrayInputStream(bytes)
+      val ois = new ObjectInputStream(bais)
+
+      ois.readObject.asInstanceOf[Id[A, B]]
+    }
+
+    serDeSer(Id(123L)) should be(Id(123L))
+    val id: Id[String, String] = Id("foo")
+    serDeSer(id) should be(id)
+    serDeSer(id) should be(Id("foo"))
+    serDeSer(id) should be(Id[Int, String]("foo"))
+    serDeSer(id) should not be(Id("bar"))
   }
 }

@@ -1,5 +1,6 @@
 package com.gilt.gfc.id
 
+import java.io.{ObjectInputStream, ByteArrayInputStream, ObjectOutputStream, ByteArrayOutputStream}
 import java.util.UUID
 import org.scalacheck.Prop._
 import org.scalatest.{FunSuite, Matchers}
@@ -200,6 +201,27 @@ class GuidTest extends FunSuite with Matchers with Checkers {
     if (guidTime >= uuidTime) {
       new java.lang.Exception("FAILED GuidTest.testToStringPerformance: guidTime=%f, uuidTime=%f".format(guidTime, uuidTime)).printStackTrace
     }
+  }
+
+  test("de/serialize") {
+    def serDeSer[T](guid: Guid[T]): Guid[T] = {
+      val baos = new ByteArrayOutputStream()
+      val oos = new ObjectOutputStream(baos)
+      oos.writeObject(guid)
+      oos.close()
+      baos.close()
+
+      val bytes = baos.toByteArray
+
+      val bais = new ByteArrayInputStream(bytes)
+      val ois = new ObjectInputStream(bais)
+
+      ois.readObject.asInstanceOf[Guid[T]]
+    }
+
+    val guid = Guid.randomGuid[Int]
+    serDeSer(guid) should be(guid)
+    serDeSer(Guid.randomGuid) should not be(guid)
   }
 
   private def toHexString(data: Array[Byte]): String = {
