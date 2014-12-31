@@ -7,13 +7,9 @@ scalaVersion := "2.11.4"
 crossScalaVersions := Seq("2.11.4", "2.10.4")
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.0.0-SNAP3" % "test",
+  "org.scalatest" %% "scalatest" % "2.2.3" % "test",
   "org.scalacheck" %% "scalacheck" % "1.12.1" % "test"
 )
-
-instrumentSettings
-
-ScoverageKeys.highlighting := true
 
 publishMavenStyle := true
 
