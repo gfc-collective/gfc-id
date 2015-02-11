@@ -2,14 +2,20 @@ name := "gfc-id"
 
 organization := "com.gilt"
 
-scalaVersion := "2.11.4"
+scalaVersion := "2.11.5"
 
-crossScalaVersions := Seq("2.11.4", "2.10.4")
+crossScalaVersions := Seq("2.11.5", "2.10.4")
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "2.2.3" % "test",
-  "org.scalacheck" %% "scalacheck" % "1.12.1" % "test"
+  "org.scalatest" %% "scalatest" % "2.2.4" % "test",
+  "org.scalacheck" %% "scalacheck" % "1.12.2" % "test"
 )
+
+releaseSettings
+
+ReleaseKeys.crossBuild := true
+
+ReleaseKeys.publishArtifactsAction := PgpKeys.publishSigned.value
 
 publishMavenStyle := true
 
