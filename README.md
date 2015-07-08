@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/gilt/gfc-id/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-id?branch=master)
+
 # gfc-id
 
 A library that contains typed Id and Guid classes. Part of the gilt foundation classes.
