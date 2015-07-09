@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/gilt/gfc-id.svg?branch=master)](https://travis-ci.org/gilt/gfc-id) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-id/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-id?branch=master)
 
-# gfc-id
+
+# gfc-id [![Build Status](https://travis-ci.org/gilt/gfc-id.svg?branch=master)](https://travis-ci.org/gilt/gfc-id) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-id/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-id?branch=master)
 
 A library that contains typed Id and Guid classes. Part of the gilt foundation classes.
 
