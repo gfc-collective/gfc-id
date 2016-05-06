@@ -46,6 +46,14 @@ class GuidSetTest extends FunSuite with Matchers with Checkers {
     (1L to 100L) map (l => Guid(100L, l + 100L)) foreach { set.contains(_) shouldBe false }
   }
 
+  test("can be turned into a list") {
+    val guids = (1 to 100) map (_ => Guid.randomGuid()) toList
+    val set = GuidSet(guids)
+    val list = set.toList
+    list.size shouldBe (guids.size)
+    list.toSet shouldBe (guids.toSet)
+  }
+
   test("Set.add whould throw") {
     an [RuntimeException] shouldBe thrownBy {
       GuidSet(Guid.randomGuid()) + Guid.randomGuid()
