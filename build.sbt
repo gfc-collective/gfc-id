@@ -2,13 +2,13 @@ name := "gfc-id"
 
 organization := "com.gilt"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
-crossScalaVersions := Seq("2.11.7", "2.10.5")
+crossScalaVersions := Seq("2.11.8", "2.10.5")
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "2.2.5" % "test",
-  "org.scalacheck" %% "scalacheck" % "1.12.4" % "test"
+  "org.scalatest" %% "scalatest" % "3.0.0-M16-SNAP4" % "test",
+  "org.scalacheck" %% "scalacheck" % "1.13.1" % "test"
 )
 
 releaseCrossBuild := true
