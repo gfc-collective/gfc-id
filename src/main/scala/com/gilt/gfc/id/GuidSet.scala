@@ -13,9 +13,9 @@ import scala.annotation.tailrec
 case class GuidSet[A] private (highBits: Array[Long], lowBits: Array[Long]) extends Set[Guid[A]] {
   override def empty: GuidSet[A] = GuidSet.empty
 
-  override def size = highBits.length
+  override def size: Int = highBits.length
 
-  override def contains(elem: Guid[A]) = {
+  override def contains(elem: Guid[A]): Boolean = {
     val high = elem.mostSignificantBits
     val low = elem.leastSignificantBits
 
@@ -33,11 +33,11 @@ case class GuidSet[A] private (highBits: Array[Long], lowBits: Array[Long]) exte
     sequentialSearch(start, _ + 1) || sequentialSearch(start - 1, _ - 1)
   }
 
-  override def +(elem: Guid[A]) = sys.error("Too inefficient to support")
+  override def +(elem: Guid[A]): GuidSet[A] = sys.error("Too inefficient to support")
 
-  override def -(elem: Guid[A]) = sys.error("Too inefficient to support")
+  override def -(elem: Guid[A]): GuidSet[A] = sys.error("Too inefficient to support")
 
-  override def iterator = new Iterator[Guid[A]] {
+  override def iterator: Iterator[Guid[A]] = new Iterator[Guid[A]] {
     @volatile private var index = 0
 
     def hasNext = index < highBits.length
