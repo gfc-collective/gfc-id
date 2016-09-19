@@ -7,8 +7,8 @@ scalaVersion := "2.11.8"
 crossScalaVersions := Seq(scalaVersion.value, "2.10.6")
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.0.0-RC4" % "test",
-  "org.scalacheck" %% "scalacheck" % "1.13.1" % "test"
+  "org.scalatest" %% "scalatest" % "3.0.0" % "test",
+  "org.scalacheck" %% "scalacheck" % "1.13.2" % "test"
 )
 
 releaseCrossBuild := true
