@@ -1,6 +1,6 @@
 
 
-# gfc-id [![Build Status](https://travis-ci.org/gilt/gfc-id.svg?branch=master)](https://travis-ci.org/gilt/gfc-id) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-id/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-id?branch=master) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# gfc-id [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.gilt/gfc-id_2.12/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.gilt/gfc-id_2.12) [![Build Status](https://travis-ci.org/gilt/gfc-id.svg?branch=master)](https://travis-ci.org/gilt/gfc-id) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-id/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-id?branch=master) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A library that contains typed Id and Guid classes. Part of the [Gilt Foundation Classes](https://github.com/gilt?q=gfc).
 
