@@ -2,10 +2,11 @@ package com.gilt.gfc.id
 
 import java.io.{ObjectInputStream, ByteArrayInputStream, ObjectOutputStream, ByteArrayOutputStream}
 
-import org.scalatest.{FunSuite, Matchers}
-import org.scalatest.prop.Checkers
+import org.scalatestplus.scalacheck.Checkers
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class IdTest extends FunSuite with Matchers with Checkers {
+class IdTest extends AnyFunSuite with Matchers with Checkers {
 
   test("toString") {
     val id1 = Id(1L)

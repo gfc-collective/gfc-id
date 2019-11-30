@@ -3,10 +3,11 @@ package com.gilt.gfc.id
 import java.io.{ObjectInputStream, ByteArrayInputStream, ObjectOutputStream, ByteArrayOutputStream}
 import java.util.UUID
 import org.scalacheck.Prop._
-import org.scalatest.{FunSuite, Matchers}
-import org.scalatest.prop.Checkers
+import org.scalatestplus.scalacheck.Checkers
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class GuidTest extends FunSuite with Matchers with Checkers {
+class GuidTest extends AnyFunSuite with Matchers with Checkers {
 
   val ValidGuidChars = {
     ('0' to '9') ++
