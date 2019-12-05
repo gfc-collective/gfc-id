@@ -1,10 +1,10 @@
 package com.gilt.gfc.id
 
-import org.scalatest.FunSuite
-import org.scalatest.Matchers
-import org.scalatest.prop.Checkers
+import org.scalatestplus.scalacheck.Checkers
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class GuidSetTest extends FunSuite with Matchers with Checkers {
+class GuidSetTest extends AnyFunSuite with Matchers with Checkers {
   test("Basics") {
     val guid = Guid.randomGuid()
     val guidSet = GuidSet(guid)
