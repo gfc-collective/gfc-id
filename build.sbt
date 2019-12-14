@@ -12,7 +12,7 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.1.0" % Test,
-  "org.scalacheck" %% "scalacheck" % "1.14.2" % Test
+  "org.scalacheck" %% "scalacheck" % "1.14.3" % Test
 )
 
 releaseCrossBuild := true
