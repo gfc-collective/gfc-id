@@ -1,4 +1,4 @@
-package com.gilt.gfc.id
+package org.gfccollective.id
 
 import java.io.{ObjectInputStream, ByteArrayInputStream, ObjectOutputStream, ByteArrayOutputStream}
 import java.util.UUID

@@ -1,6 +1,6 @@
 
 
-# gfc-id [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.gilt/gfc-id_2.12/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.gilt/gfc-id_2.12) [![Build Status](https://travis-ci.org/gilt/gfc-id.svg?branch=master)](https://travis-ci.org/gilt/gfc-id) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-id/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-id?branch=master) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# gfc-id [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.gfccollective/gfc-id_2.12/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/org.gfccollective/gfc-id_2.12) [![Build Status](https://travis-ci.org/gilt/gfc-id.svg?branch=master)](https://travis-ci.org/gilt/gfc-id) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-id/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-id?branch=master) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A library that contains typed Id and Guid classes. Part of the [Gilt Foundation Classes](https://github.com/gilt?q=gfc).
 
@@ -11,10 +11,10 @@ The latest version is 0.0.7, which is cross-built against Scala 2.10.x, 2.11.x a
 If you're using SBT, add the following line to your build file:
 
 ```scala
-libraryDependencies += "com.gilt" %% "gfc-id" % "0.0.7"
+libraryDependencies += "org.gfccollective" %% "gfc-id" % "0.0.7"
 ```
 
-For Maven and other build tools, you can visit [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Ccom.gilt%20gfc).
+For Maven and other build tools, you can visit [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Corg.gfccollective%20gfc).
 (This search will also list other available libraries from the gilt fundation classes.)
 
 ## Contents and Example Usage
@@ -23,14 +23,14 @@ Typed identifiers allow compile-time checking that an identifier that is passed 
 function or object is of the correct type, which is not the case with "untyped" String, 
 Long or UUID types.
 
-### com.gilt.gfc.id.Guid
+### org.gfccollective.id.Guid
 
 Guid is a space/cpu efficient and type safe replacement for java.util.UUID
 
     val userGuid: Guid[User] = Guid.randomGuid
     val user: User = new User(userGuid, firstName, lastName)
 
-### com.gilt.gfc.id.Id 
+### org.gfccollective.id.Id 
 
 Id can be used for typed identifiers (e.g. rdbms auto-increment ids).
 

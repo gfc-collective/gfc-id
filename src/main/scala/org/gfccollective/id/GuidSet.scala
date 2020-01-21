@@ -1,4 +1,4 @@
-package com.gilt.gfc.id
+package org.gfccollective.id
 
 import java.util.Arrays
 import scala.annotation.tailrec
