@@ -47,7 +47,7 @@ class GuidSetTest extends AnyFunSuite with Matchers with Checkers {
   }
 
   test("can be turned into a list") {
-    val guids = (1 to 100) map (_ => Guid.randomGuid()) toList
+    val guids = (1 to 100).map (_ => Guid.randomGuid()).toList
     val set = GuidSet(guids)
     val list = set.toList
     list.size shouldBe (guids.size)
