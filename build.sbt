@@ -34,7 +34,7 @@ publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
 
-licenses := Seq("Apache-style" -> url("https://raw.githubusercontent.com/gfc-collective/gfc-id/master/LICENSE"))
+licenses := Seq("Apache-style" -> url("https://raw.githubusercontent.com/gfc-collective/gfc-id/main/LICENSE"))
 
 homepage := Some(url("https://github.com/gfc-collective/gfc-id"))
 
